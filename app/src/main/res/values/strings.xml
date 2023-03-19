@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TL01E10004</string>
+    <string-array name="paises">
+        <item>Honduras(504)</item>
+        <item>Costa Rica(506)</item>
+        <item>Guatemala(502)</item>
+        <item>El Salvador(503)</item>
+    </string-array>
+    <string name="btnsalvarc">Salvar Contactos</string>
+    <string name="btncontsal">Contactos Salvados</string>
+    <string name="btnatras">Atras</string>
+    <string name="btncompartircon">Compartir Contacto</string>
+    <string name="btneliminarcon">Eliminar Contacto</string>
+    <string name="btnverimagen">Ver Imagen</string>
+    <string name="btnactualizarcontacto">Actualizar Contacto</string>
+</resources>
