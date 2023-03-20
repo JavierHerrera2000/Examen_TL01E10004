@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         nombrecontacto.setText("");
         numcontacto.setText("");
         notacontacto.setText("");
-        Imagen.setImageResource(0);
+        Imagen.setImageResource(R.drawable.icono_persona);
     }
 
     public void onclick(View view){
