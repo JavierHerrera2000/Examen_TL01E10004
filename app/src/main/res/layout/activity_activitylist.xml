@@ -12,6 +12,7 @@
         android:layout_width="367dp"
         android:layout_height="386dp"
         android:layout_marginTop="10dp"
+        android:background="#1E58AF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtbuscar" />
@@ -22,17 +23,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
+        android:onClick="Iringcon"
         android:text="@string/btnatras"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
         android:id="@+id/txtbuscar"
-        android:layout_width="0dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="30dp"
+        android:layout_width="313dp"
+        android:layout_height="49dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="30dp"
+        android:background="#F5FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -43,6 +44,7 @@
         android:layout_height="57dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="28dp"
+        android:onClick="Compcon"
         android:text="@string/btncompartircon"
         app:layout_constraintEnd_toStartOf="@+id/btnverimagen"
         app:layout_constraintHorizontal_bias="0.0"
@@ -56,6 +58,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="16dp"
+        android:onClick="Verim"
         android:text="@string/btnverimagen"
         app:layout_constraintBottom_toTopOf="@+id/btnactcon"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +71,7 @@
         android:layout_height="56dp"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="68dp"
+        android:onClick="Elmc"
         android:text="@string/btneliminarcon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -78,6 +82,7 @@
         android:layout_height="62dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="68dp"
+        android:onClick="Actc"
         android:text="@string/btnactualizarcontacto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

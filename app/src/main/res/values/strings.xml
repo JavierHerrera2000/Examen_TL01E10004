@@ -13,4 +13,6 @@
     <string name="btneliminarcon">Eliminar Contacto</string>
     <string name="btnverimagen">Ver Imagen</string>
     <string name="btnactualizarcontacto">Actualizar Contacto</string>
+    <string name="btnactcon">Actualizar</string>
+    <string name="btncan">Cancelar</string>
 </resources>

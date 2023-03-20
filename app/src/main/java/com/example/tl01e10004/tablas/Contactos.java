@@ -69,4 +69,5 @@ public class Contactos
     public void setImagen(byte[] imagen) {
         this.imagen = imagen;
     }
+
 }

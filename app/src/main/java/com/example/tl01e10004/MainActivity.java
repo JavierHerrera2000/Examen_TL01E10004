@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         nombrecontacto=(EditText)findViewById(R.id.txtnomcon);
         numcontacto=(EditText)findViewById(R.id.txtnumcon);
         notacontacto=(EditText)findViewById(R.id.txtnotcon);
@@ -43,47 +44,65 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spnlistapaises.setAdapter(adapter);
         Imagen=(ImageView) findViewById(R.id.ImagenContacto);
+        Imagen.setImageResource(R.drawable.icono_persona);
 
     }
 
     public void AgregarContactos(View view)
     {
-        try {
-            int posc;
-            posc=spnlistapaises.getSelectedItemPosition();
-            if(posc==0){
-                pa="504";
-            }
-            if(posc==1){
-                pa="506";
-            }if(posc==0){
-                pa="502";
-            }
-            if(posc==0){
-                pa="503";
-            }
-            Bitmap bitmap = ((BitmapDrawable) Imagen.getDrawable()).getBitmap();
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-            byte[] imageInByte = baos.toByteArray();
-            SQLiteConexion conexion= new SQLiteConexion(this,
-                    Transacciones.NameDatabase,
-                    null,
-                    1);
+            if(nombrecontacto.getText().toString().isEmpty()){
+                Toast.makeText(this,"No se ha escrito Ningun Nombre de Contacto", Toast.LENGTH_SHORT).show();
+            }else{
 
-            SQLiteDatabase db= conexion.getWritableDatabase();
-            ContentValues valores = new ContentValues();
-            valores.put(Transacciones.Pais,pa);
-            valores.put(Transacciones.NombreContacto,nombrecontacto.getText().toString());
-            valores.put(Transacciones.NumeroContacto,numcontacto.getText().toString());
-            valores.put(Transacciones.NotaContacto,notacontacto.getText().toString());
-            valores.put(Transacciones.imagen,imageInByte);
-            Long resultado=db.insert(Transacciones.tablacontact,Transacciones.id,valores);
-            Toast.makeText(this,"Salvacion Exitosa", Toast.LENGTH_SHORT).show();
-            CleanPantalla();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+                if(numcontacto.getText().toString().isEmpty()){
+                    Toast.makeText(this,"No se ha escrito Ningun Numero", Toast.LENGTH_SHORT).show();
+
+                }else {
+
+                    try {
+                        int posc;
+                        posc=spnlistapaises.getSelectedItemPosition();
+                        if(posc==0){
+                            pa="504";
+                        }
+                        if(posc==1){
+                            pa="506";
+                        }if(posc==2){
+                            pa="502";
+                        }
+                        if(posc==3){
+                            pa="503";
+                        }
+
+                        Bitmap bitmap = ((BitmapDrawable) Imagen.getDrawable()).getBitmap();
+                            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                            byte[] imageInByte = baos.toByteArray();
+                            SQLiteConexion conexion= new SQLiteConexion(this,
+                                    Transacciones.NameDatabase,
+                                    null,
+                                    1);
+
+                            SQLiteDatabase db= conexion.getWritableDatabase();
+                            ContentValues valores = new ContentValues();
+                            valores.put(Transacciones.Pais,pa);
+                            valores.put(Transacciones.NombreContacto,nombrecontacto.getText().toString());
+                            valores.put(Transacciones.NumeroContacto,numcontacto.getText().toString());
+                            valores.put(Transacciones.NotaContacto,notacontacto.getText().toString());
+                            valores.put(Transacciones.imagen,imageInByte);
+                            Long resultado=db.insert(Transacciones.tablacontact,Transacciones.id,valores);
+                            Toast.makeText(this,"Salvacion Exitosa", Toast.LENGTH_SHORT).show();
+                            CleanPantalla();
+
+
+
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+            }
+
+
 
     }
 
@@ -113,9 +132,6 @@ public class MainActivity extends AppCompatActivity {
             Imagen.setImageURI(path);
         }
 
-    }
-    public void h(View v) {
-        Toast.makeText(this,"hsddjhgjsdds",Toast.LENGTH_SHORT).show();
     }
     public void Irsalvcon(View v) {
         Intent pagina = new Intent(getApplicationContext(),Activitylist.class);
